@@ -1,9 +1,13 @@
 # coding: UTF-8
 import os
 from slack import SlackService, Message
+from dotenv import load_dotenv
 
 
 class RemoveTxt():
+    load_dotenv()
+    SLACK_WEBHOOK_URL_ADMIN = os.environ["SLACK_WEBHOOK_URL_ADMIN"]
+
     SAVE_TEXT = "./save_id_list.txt"
     SAVE_TEXT2 = "./save_id_list2.txt"
     SAVE_TEXT3 = "./save_id_list3.txt"
@@ -19,7 +23,7 @@ class RemoveTxt():
             os.remove(self.SAVE_TEXT3)
 
         SlackService.post(attachments=Message.info(
-            url='https://hooks.slack.com/services/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',
+            url=self.SLACK_WEBHOOK_URL_ADMIN,
             name="",
             text="--------------- 削除バッチ処理完了 ---------------"))
 
