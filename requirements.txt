@@ -1,6 +1,7 @@
-selenium==3.141.0
-chromedriver-binary==90.0.4430.24.0
-requests==2.24.0
-pandas==1.0.4
-beautifulsoup4==4.9.1
-python-dotenv==0.14.0
+selenium
+chromedriver-binary==103.0.5060.24.0
+requests
+pandas
+beautifulsoup4
+python-dotenv
+black
